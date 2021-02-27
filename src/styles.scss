@@ -1,1 +1,51 @@
 /* You can add global styles to this file, and also import other style files */
+
+//fonts 
+@font-face {
+    font-family: Metropolis-Regular;
+    src: url(assets/font/metropolis/Metropolis-Regular.otf);
+}
+
+@font-face {
+    font-family: Metropolis-Bold;
+    src: url(assets/font/metropolis/Metropolis-Bold.otf);
+}
+
+@font-face {
+    font-family: Metropolis-Medium;
+    src: url(assets/font/metropolis/Metropolis-Medium.otf);
+}
+
+@font-face {
+    font-family: Metropolis-ExtraBold;
+    src: url(assets/font/metropolis/Metropolis-ExtraBold.otf);
+}
+
+@font-face {
+    font-family: Metropolis-SemiBold;
+    src: url(assets/font/metropolis/Metropolis-SemiBold.otf);
+}
+
+@font-face {
+    font-family: Metropolis-Black;
+    src: url(assets/font/metropolis/Metropolis-Black.otf);
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    width: 100%;
+    color: #000000;
+    background: linear-gradient(90deg, #cc2b5e, #753a88);
+    cursor: url('assets/images/pig.png'), pointer;
+}
+
+.heart {
+    background-color: #5E081E;
+}
