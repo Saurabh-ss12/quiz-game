@@ -43,9 +43,13 @@ body {
     width: 100%;
     color: #000000;
     background: linear-gradient(90deg, #cc2b5e, #753a88);
-    cursor: url('assets/images/pig.png'), pointer;
+    cursor: url(assets/images/pig.png), auto;
 }
 
 .heart {
     background-color: #5E081E;
+}
+
+.hide {
+    display: none !important;
 }

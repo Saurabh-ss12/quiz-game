@@ -1,0 +1,98 @@
+<body>
+    <P class="animate__animated animate__fadeInDown animate__delay-1s intro">Hey Piggy</P>
+    <div style="margin-bottom: 24px;"></div>
+    <P class="animate__animated animate__fadeIn animate__delay-3s intro small">How's it going <span
+            [class.showMark]="isShowOptions" [class.hide]="!isShowOptions"
+            class="animate__animated animate__jackInTheBox">?</span></P>
+
+    <div class="info" (click)="showInfo()" *ngIf="(!isShowModal && !isShowOptions) || allChecked">
+        <p style="color: white; font-family: Metropolis-Medium; font-size: 16px;">i</p>
+    </div>
+
+    <div class="animate__animated animate__bounceIn infoBox" [class.show]="isShowModal" [class.hide]="!isShowModal">
+        <p style="font-size: 20px; font-family: Metropolis-Medium;" [class.show]="dialogNumber === 1 && !allChecked"
+            [class.hide]="dialogNumber !== 1 || allChecked">
+            I have heard some people say, developers are boring or chomu ಠ_ಠ
+        </p>
+        <p style="font-size: 20px; font-family: Metropolis-Medium;" [class.show]="dialogNumber === 2 && !allChecked"
+            [class.hide]="dialogNumber !== 2 || allChecked">
+            But today, let's see what happens when a developer "make efforts" for her bae ( ͡° ͜ʖ ͡°)
+        </p>
+        <p style="font-size: 20px; font-family: Metropolis-Medium;" [class.show]="dialogNumber === 3 && !allChecked"
+            [class.hide]="dialogNumber !== 3 || allChecked">
+            Now, be careful of what options you choose, cuz it leads to risks or rewards..&nbsp;&nbsp;&nbsp;&nbsp;
+            <span style="font-size: 28px; font-family: Metropolis-SemiBold; margin: 0 4px;" id="go"
+                (click)="goOptions()">Let's Go!</span>
+        </p>
+        <p style="font-size: 20px; font-family: Metropolis-Medium;" [class.show]="allChecked"
+            [class.hide]="!allChecked">
+            Now&nbsp;&nbsp;&nbsp;&nbsp;
+            <span style="font-size: 28px; font-family: Metropolis-SemiBold; margin: 0 4px;" id="go"
+                (click)="goOptions()">Let's Go!</span>
+        </p>
+        <div id="timerbar" #timer></div>
+    </div>
+
+    <div style="display: flex; margin-top: 40px; justify-content: space-around; width: 100%;"
+        [class.show]="isShowOptions" [class.hide]="!isShowOptions">
+        <div class="flip-card animate__animated animate__jackInTheBox option" (mouseover)="checkRead('difficult')">
+            <div class="flip-card-inner">
+                <div class="flip-card-front front-new" style="background-color: rgb(133, 50, 148, 0.8);">
+                    I'm excited and gonna nail it!
+                </div>
+                <div class="flip-card-back back-new" style="background-color: rgb(133, 50, 148, 0.8);">
+                    <p>
+                        Difficulty:&nbsp;<span class="big">Embrace yourself</span>
+                    </p>
+                    <p>
+                        Rewards:&nbsp;<span class="big">You take it all</span>
+                    </p>
+                    <p>
+                        Risks:&nbsp;<span class="big">Or you lose it big</span>
+                    </p>
+                    Nail it or Fail it. Goes both ways
+                </div>
+            </div>
+        </div>
+
+        <div class="flip-card animate__animated animate__jackInTheBox option" (mouseover)="checkRead('medium')">
+            <div class="flip-card-inner">
+                <div class="flip-card-front front-new" style="background-color: rgb(186, 45, 155, 0.8);">
+                    Doing good, make me feel better babe.
+                </div>
+                <div class="flip-card-back back-new" style="background-color: rgb(186, 45, 155, 0.8);">
+                    <p>
+                        Difficulty:&nbsp;<span class="big">Play well, do well</span>
+                    </p>
+                    <p>
+                        Rewards:&nbsp;<span class="big">Can earn till an extent</span>
+                    </p>
+                    <p>
+                        Risks:&nbsp;<span class="big">Can lose if you're bad in it</span>
+                    </p>
+                    You will be able to do it.
+                </div>
+            </div>
+        </div>
+
+        <div class="flip-card animate__animated animate__jackInTheBox option" (mouseover)="checkRead('easy')">
+            <div class="flip-card-inner">
+                <div class="flip-card-front front-new" style="background-color: rgb(217, 41, 106, 0.8);">
+                    Nah, doesn't excite me.
+                </div>
+                <div class="flip-card-back back-new" style="background-color: rgb(217, 41, 106, 0.8);">
+                    <p>
+                        Difficulty:&nbsp;<span class="big">Ahh, this doesn't excite me either</span>
+                    </p>
+                    <p>
+                        Rewards:&nbsp;<span class="big">Have your consolation prize</span>
+                    </p>
+                    <p>
+                        Risks:&nbsp;<span class="big">Umm, forget about it</span>
+                    </p>
+                    In my opinion you will never choose this.
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
