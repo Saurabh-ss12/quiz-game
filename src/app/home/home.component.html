@@ -14,23 +14,28 @@
             [class.hide]="dialogNumber !== 1 || allChecked">
             I have heard some people say, developers are boring or chomu ಠ_ಠ
         </p>
+
         <p style="font-size: 20px; font-family: Metropolis-Medium;" [class.show]="dialogNumber === 2 && !allChecked"
             [class.hide]="dialogNumber !== 2 || allChecked">
             But today, let's see what happens when a developer "make efforts" for her bae ( ͡° ͜ʖ ͡°)
         </p>
+
         <p style="font-size: 20px; font-family: Metropolis-Medium;" [class.show]="dialogNumber === 3 && !allChecked"
             [class.hide]="dialogNumber !== 3 || allChecked">
             Now, be careful of what options you choose, cuz it leads to risks or rewards..&nbsp;&nbsp;&nbsp;&nbsp;
-            <span style="font-size: 28px; font-family: Metropolis-SemiBold; margin: 0 4px;" id="go"
-                (click)="goOptions()">Let's Go!</span>
         </p>
+        <p style="font-size: 28px; font-family: Metropolis-SemiBold; margin: 0 4px; display: none;" id="go"
+            (click)="goOptions()">Let's Go!</p>
+
         <p style="font-size: 20px; font-family: Metropolis-Medium;" [class.show]="allChecked"
             [class.hide]="!allChecked">
-            Now&nbsp;&nbsp;&nbsp;&nbsp;
-            <span style="font-size: 28px; font-family: Metropolis-SemiBold; margin: 0 4px;" id="go"
-                (click)="goOptions()">Let's Go!</span>
+            In two minds? let's learn about these modes more.&nbsp;&nbsp;&nbsp;&nbsp;
         </p>
-        <div id="timerbar" #timer></div>
+        <p style="font-size: 28px; font-family: Metropolis-SemiBold; margin: 0 4px;" id="tutorial"
+            (click)="goTotutorial()" [class.show]="allChecked" [class.hide]="!allChecked">Take
+            Me There!</p>
+
+        <div id="timerbar" [class.hide]="allChecked"></div>
     </div>
 
     <div style="display: flex; margin-top: 40px; justify-content: space-around; width: 100%;"
@@ -39,16 +44,17 @@
             <div class="flip-card-inner">
                 <div class="flip-card-front front-new" style="background-color: rgb(133, 50, 148, 0.8);">
                     I'm excited and gonna nail it!
+                    <p style="margin-top: 16px; color: #ffbf00;">Veteran Mode</p>
                 </div>
                 <div class="flip-card-back back-new" style="background-color: rgb(133, 50, 148, 0.8);">
                     <p>
-                        Difficulty:&nbsp;<span class="big">Embrace yourself</span>
+                        Difficulty :&nbsp;<span class="big">Embrace yourself</span>
                     </p>
                     <p>
-                        Rewards:&nbsp;<span class="big">You take it all</span>
+                        Rewards :&nbsp;<span class="big">You take it all</span>
                     </p>
                     <p>
-                        Risks:&nbsp;<span class="big">Or you lose it big</span>
+                        Risks :&nbsp;<span class="big">Might lose it big</span>
                     </p>
                     Nail it or Fail it. Goes both ways
                 </div>
@@ -59,18 +65,19 @@
             <div class="flip-card-inner">
                 <div class="flip-card-front front-new" style="background-color: rgb(186, 45, 155, 0.8);">
                     Doing good, make me feel better babe.
+                    <p style="margin-top: 16px; color: #ffbf00;">Intermediate Mode</p>
                 </div>
                 <div class="flip-card-back back-new" style="background-color: rgb(186, 45, 155, 0.8);">
                     <p>
-                        Difficulty:&nbsp;<span class="big">Play well, do well</span>
+                        Difficulty :&nbsp;<span class="big">Play well, do well</span>
                     </p>
                     <p>
-                        Rewards:&nbsp;<span class="big">Can earn till an extent</span>
+                        Rewards :&nbsp;<span class="big">Till an extent</span>
                     </p>
                     <p>
-                        Risks:&nbsp;<span class="big">Can lose if you're bad in it</span>
+                        Risks :&nbsp;<span class="big">Somewhat</span>
                     </p>
-                    You will be able to do it.
+                    If you aim to be "average".
                 </div>
             </div>
         </div>
@@ -79,18 +86,19 @@
             <div class="flip-card-inner">
                 <div class="flip-card-front front-new" style="background-color: rgb(217, 41, 106, 0.8);">
                     Nah, doesn't excite me.
+                    <p style="margin-top: 16px; color: #ffbf00;">Noob Mode</p>
                 </div>
                 <div class="flip-card-back back-new" style="background-color: rgb(217, 41, 106, 0.8);">
                     <p>
-                        Difficulty:&nbsp;<span class="big">Ahh, this doesn't excite me either</span>
+                        Difficulty :&nbsp;<span class="big">This doesn't excite me either</span>
                     </p>
                     <p>
-                        Rewards:&nbsp;<span class="big">Have your consolation prize</span>
+                        Rewards :&nbsp;<span class="big">Consolation prize</span>
                     </p>
                     <p>
-                        Risks:&nbsp;<span class="big">Umm, forget about it</span>
+                        Risks :&nbsp;<span class="big">Nevermind</span>
                     </p>
-                    In my opinion you will never choose this.
+                    In my opinion DONT choose this.
                 </div>
             </div>
         </div>

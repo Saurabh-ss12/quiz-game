@@ -1,0 +1,260 @@
+<body>
+    <p id="head" class="animate__animated animate__fadeIn animate__repeat-2 head" style="margin-bottom: 64px;"
+        [class.hide]="mode !== ''">
+        {{header}}</p>
+    <p id="play" class="animate__animated animate__fadeIn head" [class.hide]="!showPlayOptions">Play In</p>
+
+    <div style="display: flex; margin-top: 40px; justify-content: space-around; width: 100%;"
+        [class.hide]="!showPlayOptions">
+        <div class="flip-card animate__animated animate__jackInTheBox animate__delay-2s option"
+            (click)="setMode('difficult')">
+            <div class="flip-card-inner">
+                <div class="flip-card-front front-new" style="background-color: rgb(133, 50, 148, 0.8);">
+                    Veteran Mode
+                </div>
+                <div class="flip-card-back back-new" style="background-color: rgb(133, 50, 148, 0.8);">
+                    <p>
+                        Correct Answer:&nbsp;<span class="big">+5</span>
+                    </p>
+                    <p>
+                        Wrong Answer :&nbsp;<span class="big">-3</span>
+                    </p>
+                    <p>
+                        Max Score possible :&nbsp;<span class="big">+35</span>
+                    </p>
+                    <p>
+                        Min Score possible :&nbsp;<span class="big">-21</span>
+                    </p>
+                    <p>
+                        Read Time :&nbsp;<span class="big">5 sec</span>
+                    </p>
+                    <p>
+                        Response Time :&nbsp;<span class="big">10 sec</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="flip-card animate__animated animate__jackInTheBox  animate__delay-2s option"
+            (click)="setMode('medium')">
+            <div class="flip-card-inner">
+                <div class="flip-card-front front-new" style="background-color: rgb(186, 45, 155, 0.8);">
+                    Intermediate Mode
+                </div>
+                <div class="flip-card-back back-new" style="background-color: rgb(186, 45, 155, 0.8);">
+                    <p>
+                        Correct Answer:&nbsp;<span class="big">+3</span>
+                    </p>
+                    <p>
+                        Wrong Answer :&nbsp;<span class="big">-1</span>
+                    </p>
+                    <p>
+                        Max Score possible :&nbsp;<span class="big">+21</span>
+                    </p>
+                    <p>
+                        Min Score possible :&nbsp;<span class="big">-7</span>
+                    </p>
+                    <p>
+                        Read Time :&nbsp;<span class="big">5 sec</span>
+                    </p>
+                    <p>
+                        Response Time :&nbsp;<span class="big">10 sec</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="flip-card animate__animated animate__jackInTheBox animate__delay-2s option"
+            (click)="setMode('easy')">
+            <div class="flip-card-inner">
+                <div class="flip-card-front front-new" style="background-color: rgb(217, 41, 106, 0.8);">
+                    Noob Mode
+                </div>
+                <div class="flip-card-back back-new" style="background-color: rgb(217, 41, 106, 0.8);">
+                    <p>
+                        Correct Answer:&nbsp;<span class="big">+2</span>
+                    </p>
+                    <p>
+                        Wrong Answer :&nbsp;<span class="big">0</span>
+                    </p>
+                    <p>
+                        Max Score possible :&nbsp;<span class="big">+14</span>
+                    </p>
+                    <p>
+                        Min Score possible :&nbsp;<span class="big">0</span>
+                    </p>
+                    <p>
+                        Read Time :&nbsp;<span class="big">5 sec</span>
+                    </p>
+                    <p>
+                        Response Time :&nbsp;<span class="big">10 sec</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="animate__animated animate__fadeIn head" [class.hide]="!counter">{{count}}</div>
+
+    <div class="animate__animated animate__fadeIn head anime" [class.hide]="!AskForNext" (click)="nextQuestion()">Next
+    </div>
+
+    <div class="bar" id="bar" [class.hide]="!showAnswers && !quizMode"></div>
+
+    <div class="quiz" [class.hide]="!quizMode || roundNumber !== 1">
+        <div [class.hide]="quizSet !== 1 || AskForNext || roundEnded" class="set">
+            <div class="question animate__animated animate__fadeIn ">
+                Amongst the following occasion, which is the one where no fight happened at all?
+            </div>
+            <div class="answer1 animate__animated animate__fadeIn " [class.hide]="!showAnswers">
+                <div class="box" (click)="select(1)" [class.selected]="selectedId === 1">Valentine's Day
+                </div>
+                <div class="box" (click)="select(2)" [class.selected]="selectedId === 2">Your Feb birthday
+                </div>
+            </div>
+            <div class="answer2 animate__animated animate__fadeIn " [class.hide]="!showAnswers">
+                <div class="box" (click)="select(3,1)" [class.selected]="selectedId === 3">Your secret birthday
+                </div>
+                <div class="box" (click)="select(4)" [class.selected]="selectedId === 4">Vijaya & friends arrival
+                </div>
+            </div>
+            <div class="head" [class.hide]="showAnswers">{{questionCounter}}</div>
+        </div>
+
+        <div [class.hide]="quizSet !== 2 || AskForNext || roundEnded" class="set">
+            <div class="question animate__animated animate__fadeIn ">
+                What was our first movie together (anywhere)?
+            </div>
+            <div class="answer1 animate__animated animate__fadeIn " [class.hide]="!showAnswers">
+                <div class="box" (click)="select(1)" [class.selected]="selectedId === 1">ZNMD
+                </div>
+                <div class="box" (click)="select(2)" [class.selected]="selectedId === 2">Thappad
+                </div>
+            </div>
+            <div class="answer2 animate__animated animate__fadeIn " [class.hide]="!showAnswers">
+                <div class="box" (click)="select(3,1)" [class.selected]="selectedId === 3">Chappak
+                </div>
+                <div class="box" (click)="select(4)" [class.selected]="selectedId === 4">Malang
+                </div>
+            </div>
+            <div class="head" [class.hide]="showAnswers">{{questionCounter}}</div>
+        </div>
+
+        <div [class.hide]="quizSet !== 3 || AskForNext || roundEnded" class="set">
+            <div class="question animate__animated animate__fadeIn ">
+                How many times have i come to Vaswani?
+            </div>
+            <div class="answer1 animate__animated animate__fadeIn " [class.hide]="!showAnswers">
+                <div class="box" (click)="select(1)" [class.selected]="selectedId === 1">1
+                </div>
+                <div class="box" (click)="select(2)" [class.selected]="selectedId === 2">2
+                </div>
+            </div>
+            <div class="answer2 animate__animated animate__fadeIn " [class.hide]="!showAnswers">
+                <div class="box" (click)="select(3,1)" [class.selected]="selectedId === 3">3
+                </div>
+                <div class="box" (click)="select(4)" [class.selected]="selectedId === 4">4
+                </div>
+            </div>
+            <div class="head" [class.hide]="showAnswers">{{questionCounter}}</div>
+        </div>
+
+        <div [class.hide]="quizSet !== 4 || AskForNext || roundEnded" class="set">
+            <div class="question animate__animated animate__fadeIn ">
+                Amongst these items which souvenir i DO NOT have
+            </div>
+            <div class="answer1 animate__animated animate__fadeIn " [class.hide]="!showAnswers">
+                <div class="box" (click)="select(1)" [class.selected]="selectedId === 1">Lighter
+                </div>
+                <div class="box" (click)="select(2)" [class.selected]="selectedId === 2">Wrist Band
+                </div>
+            </div>
+            <div class="answer2 animate__animated animate__fadeIn " [class.hide]="!showAnswers">
+                <div class="box" (click)="select(3)" [class.selected]="selectedId === 3">Letter
+                </div>
+                <div class="box" (click)="select(4,1)" [class.selected]="selectedId === 4">Perfume
+                </div>
+            </div>
+            <div class="head" [class.hide]="showAnswers">{{questionCounter}}</div>
+        </div>
+
+        <div [class.hide]="quizSet !== 5 || AskForNext || roundEnded" class="set">
+            <div class="question animate__animated animate__fadeIn ">
+                Out of these what we both NEVER had together
+            </div>
+            <div class="answer1 animate__animated animate__fadeIn " [class.hide]="!showAnswers">
+                <div class="box" (click)="select(1)" [class.selected]="selectedId === 1">Ice cream
+                </div>
+                <div class="box" (click)="select(2,1)" [class.selected]="selectedId === 2">Noodles
+                </div>
+            </div>
+            <div class="answer2 animate__animated animate__fadeIn " [class.hide]="!showAnswers">
+                <div class="box" (click)="select(3)" [class.selected]="selectedId === 3">LIIT
+                </div>
+                <div class="box" (click)="select(4)" [class.selected]="selectedId === 4">Lassi
+                </div>
+            </div>
+            <div class="head" [class.hide]="showAnswers">{{questionCounter}}</div>
+        </div>
+
+        <div [class.hide]="quizSet !== 6 || AskForNext || roundEnded" class="set">
+            <div class="question animate__animated animate__fadeIn ">
+                What was the first ever interaction we ever had?
+            </div>
+            <div class="answer1 animate__animated animate__fadeIn " [class.hide]="!showAnswers">
+                <div class="box" (click)="select(1, 1)" [class.selected]="selectedId === 1">Are you from our college?
+                </div>
+                <div class="box" (click)="select(2)" [class.selected]="selectedId === 2">How come you're staying late?
+                </div>
+            </div>
+            <div class="answer2 animate__animated animate__fadeIn " [class.hide]="!showAnswers">
+                <div class="box" (click)="select(3)" [class.selected]="selectedId === 3">Did i leave my earphones at
+                    your desk?
+                </div>
+                <div class="box" (click)="select(4)" [class.selected]="selectedId === 4">Where do you stay?
+                </div>
+            </div>
+            <div class="head" [class.hide]="showAnswers">{{questionCounter}}</div>
+        </div>
+
+        <div [class.hide]="quizSet !== 7 || AskForNext || roundEnded" class="set">
+            <div class="question animate__animated animate__fadeIn ">
+                Amongst these items, which one did you REFUSE to take, WHEN I WAS HITTING ON YOU?
+            </div>
+            <div class="answer1 animate__animated animate__fadeIn " [class.hide]="!showAnswers">
+                <div class="box" (click)="select(1, 1)" [class.selected]="selectedId === 1">
+                    Dairy Milk
+                </div>
+                <div class="box" (click)="select(2)" [class.selected]="selectedId === 2">Lays
+                </div>
+            </div>
+            <div class="answer2 animate__animated animate__fadeIn " [class.hide]="!showAnswers">
+                <div class="box" (click)="select(3)" [class.selected]="selectedId === 3">Snickers
+                </div>
+                <div class="box" (click)="select(4,1)" [class.selected]="selectedId === 4">Cigarette
+                </div>
+            </div>
+            <div class="head" [class.hide]="showAnswers">{{questionCounter}}</div>
+        </div>
+    </div>
+
+    <div class="animate__animated animate__fadeIn head" [class.hide]="roundNumber === 3 || !roundEnded">Your Total Score
+        : <span style="color: #ffbf00;">{{netScore}}</span>
+    </div>
+    <div class="animate__animated animate__fadeIn head anime" style="margin-top: 48px; font-size: 32px !important;"
+        [class.hide]="roundNumber === 3 || !roundEnded" (click)="NextRound()">
+        Next Round
+    </div>
+
+
+    <div class="container" [class.hide]="!finish">
+        <div class="firework">
+            <div class="before"></div>
+            <div class="after"></div>
+        </div>
+
+        <div class="animate__animated animate__fadeIn head" [class.hide]="!roundEnded">Your Total Score : <span
+                style="color: #ffbf00;">{{netScore}}</span>
+        </div>
+    </div>
+</body>

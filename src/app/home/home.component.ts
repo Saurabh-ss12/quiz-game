@@ -18,8 +18,15 @@ export class HomeComponent implements OnInit {
 
   showInfo() {
     this.isShowModal = true;
-    document.getElementById('timerbar').style.animation = "timer 8s infinite";
-    this.startDialogs();
+    if (!this.allChecked) {
+      document.getElementById('timerbar').style.animation = "timer 8s infinite";
+      this.startDialogs();
+    }
+    if (this.allChecked) {
+      document.getElementsByClassName('info')[0].classList.add('pause');
+      document.getElementById('go').classList.add('pause');
+      document.getElementById('go').style.display = "none";
+    }
   }
 
   startDialogs() {
@@ -28,7 +35,8 @@ export class HomeComponent implements OnInit {
         this.dialogNumber++;
       } else {
         document.getElementById('timerbar').classList.add('pause');
-        document.getElementById('go').style.animation = "blink 2s infinite"
+        document.getElementById('go').style.display = "inline-block";
+        document.getElementById('go').style.animation = "blink 2s infinite";
         clearInterval(inter);
       }
     }, 8000);
@@ -38,6 +46,10 @@ export class HomeComponent implements OnInit {
   goOptions() {
     this.isShowModal = false;
     this.isShowOptions = true;
+  }
+
+  goTotutorial() {
+    this.router.navigateByUrl('/tutorial');
   }
 
   checkRead(mode: String) {

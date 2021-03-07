@@ -1,1 +1,74 @@
-<p>tutorial works!</p>
+<body>
+    <p class="animate__animated animate__fadeIn head">How it works :</p>
+
+    <div style="max-width: 80vw;" [class.show]="page === 1" [class.hide]="page !== 1">
+        <p class="animate__animated animate__fadeIn animate__delay-1s subHead">- This quiz is all about
+            knowing your partner quite well.</p>
+        <p class="animate__animated animate__fadeIn animate__delay-1s subHead">- It consists of 3 rounds
+            namely '<span style="color: #ffbf00;">Relationship Trivia</span>',
+            '<span style="color: #ffbf00;">Convos</span>', & '<span style="color: #ffbf00;">Choices</span>'.</p>
+        <p class="animate__animated animate__fadeIn animate__delay-1s subHead">- At start of each round
+            you will get to know about the rules of that round.</p>
+        <p class="animate__animated animate__fadeIn animate__delay-1s subHead">- Don't worry, bae is always
+            there to guide you.</p>
+    </div>
+
+    <div style="max-width: 80vw;" [class.show]="page === 2" [class.hide]="page !== 2">
+        <p class="animate__animated animate__fadeIn animate__delay-1s subHead">- There are 3 modes
+            namely '<span style="color: #ffbf00;">Veteran</span>',
+            '<span style="color: #ffbf00;">Intermediate</span>', & '<span style="color: #ffbf00;">Noob</span>'.</p>
+        <p class="animate__animated animate__fadeIn animate__delay-1s subHead">- At the beginning of each round you will
+            pe prompted to choose the mode.</p>
+        <p class="animate__animated animate__fadeIn animate__delay-1s subHead">- Each mode has it's own points system.
+        </p>
+        <p class="animate__animated animate__fadeIn animate__delay-1s subHead">- At the end of 3 rounds your overall
+            score will be calculated.
+        </p>
+    </div>
+
+    <div style="max-width: 80vw;" [class.show]="page === 3" [class.hide]="page !== 3">
+        <p class="animate__animated animate__fadeIn animate__delay-1s subHead">- No matter which mode you have chosen,
+            questions of that round will always be the same.</p>
+        <p class="animate__animated animate__fadeIn animate__delay-1s subHead">- <span style="color: #ffbf00;">Veteran
+                Mode</span>&nbsp;: For each correct answer you get <span style="color: #ffbf00;">+5</span> and <span
+                style="color: #ffbf00;">-3</span> if it is wrong.</p>
+        <p class="animate__animated animate__fadeIn animate__delay-1s subHead">- <span
+                style="color: #ffbf00;">Intermediate Mode</span>&nbsp;: For each correct answer you get <span
+                style="color: #ffbf00;">+3</span> and <span style="color: #ffbf00;">-1</span> if it
+            is wrong.</p>
+        <p class="animate__animated animate__fadeIn animate__delay-1s subHead">- <span style="color: #ffbf00;">Noob
+                Mode</span>&nbsp;: For each correct answer you get <span style="color: #ffbf00;">+2</span> and <span
+                style="color: #ffbf00;">0</span> if it is wrong.</p>
+    </div>
+
+    <div style="max-width: 80vw;" [class.show]="page === 4" [class.hide]="page !== 4">
+        <p class="animate__animated animate__fadeIn animate__delay-1s subHead">- Your cumulative score decides in which
+            winning/losing category you fall.</p>
+        <p class="animate__animated animate__fadeIn animate__delay-1s subHead">- The categories are as follows,
+            rewards/risks will be disclosed later (better the category better the reward).</p>
+        <p class="animate__animated animate__fadeIn animate__delay-1s subHead">- 3 Rounds, 7 questions each, when played
+            each in <span style="color: #ffbf00;">Veteran Mode</span>, leads to Max score as <span
+                style="color: #ffbf00;">+105</span> and Min score as <span style="color: #ffbf00;">-63</span></p>
+        <div class="animate__animated animate__fadeIn animate__delay-1s subHead">- Categories :
+            <p style="padding-left: 16px; margin-bottom: 16px; margin-top: 16px;"><span style="color: #ffbf00;">70 -
+                    105</span>&nbsp;:&nbsp;Tumhara Koi Jawaab Nahi</p>
+            <p style="padding-left: 16px; margin-bottom: 16px;"><span style="color: #ffbf00;">50 -
+                    70</span>&nbsp;:&nbsp;Dil Khush</p>
+            <p style="padding-left: 16px; margin-bottom: 16px;"><span
+                    style="color: #ffbf00;">40-50</span>&nbsp;:&nbsp;Kaam Chala Lunga</p>
+            <p style="padding-left: 16px; margin-bottom: 16px;"><span style="color: #ffbf00;">20 -
+                    40</span>&nbsp;:&nbsp;Kya hi tum</p>
+            <p style="padding-left: 16px; margin-bottom: 16px;"><span style="color: #ffbf00;">Below
+                    20</span>&nbsp;:&nbsp;Bhool jao Reward and you owe me something instead!</p>
+        </div>
+    </div>
+
+    <p [class.show]="page === 4" [class.hide]="page !== 4" class="proceed" id="proceed" (click)="startQuiz()">I'm Ready!
+    </p>
+
+    <div class="pageChanger">
+        <span *ngIf="page !== 1" class="arrow" (click)="changePage('back')">
+            < </span>&nbsp;&nbsp;Page&nbsp;<span style="color: #ffbf00;">{{page}}</span>&nbsp;of
+                4&nbsp;&nbsp;<span class="arrow" (click)="changePage('next')" *ngIf="page !== 4">></span>
+    </div>
+</body>

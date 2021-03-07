@@ -1,0 +1,58 @@
+body {
+    padding-top: 32px;
+    padding-left: 32px;
+}
+
+.head {
+    font-size: 48px;
+    font-family: Metropolis-Bold;
+    line-height: 1.5rem;
+    color: white;
+    margin-bottom: 48px;
+}
+
+.subHead {
+    font-size: 32px;
+    font-family: Metropolis-Medium;
+    margin-bottom: 40px;
+    line-height: 2.5rem;
+    color: white;
+}
+
+.pageChanger {
+    position: absolute;
+    bottom: 32px;
+    right: 32px;
+    display: flex;
+    align-items: center;
+    font-size: 24px;
+    font-family: Metropolis-Medium;
+    color: white;
+}
+
+.proceed {
+    position: absolute;
+    top: 32px;
+    right: 32px;
+    font-size: 24px;
+    font-family: Metropolis-Medium;
+    color: white;
+}
+
+.arrow {
+    font-size: 48px;
+}
+
+@keyframes blink {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.2);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
