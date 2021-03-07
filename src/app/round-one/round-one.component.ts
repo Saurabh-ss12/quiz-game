@@ -89,7 +89,7 @@ export class RoundOneComponent implements OnInit {
         --this.answerCounter;
       } else {
         clearInterval(inter);
-        if (this.quizSet < 3) {
+        if (this.quizSet < 7) {
           this.checkScore();
           this.AskForNext = true;
         } else {
