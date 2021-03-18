@@ -13,7 +13,7 @@ export class RoundOneComponent implements OnInit {
   count = 5;
   counter = false;
   questionCounter = 5;
-  answerCounter = 7;
+  answerCounter = 5;
   quizSet = 1;
   quizMode = false;
   showAnswers = false;
@@ -82,8 +82,8 @@ export class RoundOneComponent implements OnInit {
 
   startAnswerTimer() {
     this.showAnswers = true;
-    this.answerCounter = 7;
-    document.getElementById('bar').style.animation = 'answerAnime 10s forwards';
+    this.answerCounter = 5;
+    document.getElementById('bar').style.animation = 'answerAnime 5s forwards';
     var inter = setInterval(() => {
       if (this.answerCounter > 1) {
         --this.answerCounter;
@@ -160,7 +160,7 @@ export class RoundOneComponent implements OnInit {
     this.count = 5;
     this.counter = false;
     this.questionCounter = 5;
-    this.answerCounter = 7;
+    this.answerCounter = 5;
     this.quizSet = 1;
     this.quizMode = false;
     this.showAnswers = false;
