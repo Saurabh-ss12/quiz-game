@@ -19,7 +19,7 @@ export class HomeComponent implements OnInit {
   showInfo() {
     this.isShowModal = true;
     if (!this.allChecked) {
-      document.getElementById('timerbar').style.animation = "timer 8s infinite";
+      document.getElementById('timerbar').style.animation = "timer 5s infinite";
       this.startDialogs();
     }
     if (this.allChecked) {
@@ -39,7 +39,7 @@ export class HomeComponent implements OnInit {
         document.getElementById('go').style.animation = "blink 2s infinite";
         clearInterval(inter);
       }
-    }, 8000);
+    }, 5000);
     // 8 sec
   }
 
